@@ -4,25 +4,46 @@
 
 		<style>
 
-			p {
-				text-size: 50px;
+			#head {
+				visibility: hidden;
+				opacity: 0.0;
 				text-align:center;
 				font-family: "Courier New", Monospace;
-                font-size:50px;
+                font-size: 50px;
+			}
+			
+			p {
+				visibility: hidden;
+				opacity: 0.0;
+				font-size: 20px;
+				text-align:center;
+				font-family: "Courier New";
 			}
 
             body {
                 background-color:lightblue;
             }    
-			</style>
+		</style>
 		
-            </head>
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		
-            <body>
+		<script>
 		
-		<p>Ram Goli</p>
+		$(document).ready(function() {
+			$("#head").css("visibility", "visible").animate({opacity: 1.0}, 2000);
+			$("#descript").css("visibility", "visible").delay(1000).animate({opacity: 1.0}, 2000);
+		});
+		</script>
+		
+	</head>
+		
+    <body>
+		
+		<p id = "head" class="appear" >Ram Goli</p>
+		<hr>
+		<p id = "descript" class = "appear">Aspiring engineer, inventor, activist</p>
 
 		
-		</body>
+	</body>
 
 </html>
