@@ -5,16 +5,16 @@
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 	
 	<script> 
-		var argRef = new Firebase("https://acdecpolls.firebaseio.com/Argument/score");
+		var argRef = new Firebase("https://acdecpolls.firebaseio.com/");
+        argRef.authWithOAuthRedirect("google", function(error) {
+             if (error) {
+                 console.log("Login Failed", error);
+             }
+             else {
+             }
+         });
 		
-		argRef.on("value", function(snapshot) {
-			var count = snapshot.val();
-			console.log(snapshot.val());
-			document.getElementById("voteCount").innerHTML = "The score is: " + count;
-			
-		}, function (errorObject) {
-        console.log("The read failed: " + errorObject.code);
-	});
+	
 		
 	</script>
 	
@@ -24,7 +24,8 @@
 		background-color:lightblue;
 	}
 	
-	table, td {
+	table, td, th {
+        border: 1px solid black;
 		padding: 15px;
 		align:center;
 	}
@@ -46,11 +47,35 @@
 	<hr>
     <h2 id="current">Marijuana</h2>
 	
-	<table align="center">
+    <table style="width:800">
 		<tr>
-			<td><button type="button">Pro</td>
-			<td><button type="button">Con</td>
+			<td></td>
+            <th><p>Superior - 4</p></th>
+            <th><p>Proficient - 3</p></th>
+            <th><p>Poor - 2</p></th>
+            <th><p>Unsatisfactory - 1</p></th>
 		</tr>
+
+        <tr>
+            <td><p>Factual Information</p></td>
+            <td>Used many facts to support all arguments.</td>
+            <td>Used some facts to support all arguments.</td>
+        </tr>
+
+        <tr>
+            <td>Persuasiveness</td>
+            <td>Score</td>
+        </tr>
+
+        <tr>
+            <td>Delivery</td>
+            <td>Score</td>
+        </tr>
+
+        <tr>
+            <td>Rebuttal</td>
+            <td>Score</td>
+        </tr>
 		
 	</table>
 
