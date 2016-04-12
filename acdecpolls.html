@@ -5,12 +5,14 @@
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 	
 	<script> 
+        
 		var argRef = new Firebase("https://acdecpolls.firebaseio.com/");
-        argRef.authWithOAuthRedirect("google", function(error) {
+        argRef.authWithOAuthPopup("google", function(error, authData) {
              if (error) {
                  console.log("Login Failed", error);
              }
              else {
+                console.log("Authenticated successfully with payload: " authData);
              }
          });
 		
@@ -49,32 +51,44 @@
 	
     <table style="width:800">
 		<tr>
-			<td></td>
+			<th>Pro</th>
             <th><p>Superior - 4</p></th>
             <th><p>Proficient - 3</p></th>
             <th><p>Poor - 2</p></th>
             <th><p>Unsatisfactory - 1</p></th>
+            <th><p>Score</p></td>
 		</tr>
 
         <tr>
-            <td><p>Factual Information</p></td>
+            <th>Factual Information</th>
             <td>Used many facts to support all arguments.</td>
             <td>Used some facts to support all arguments.</td>
+            <td>Used few facts to support all arguments</td>
+            <td>Did not present facts to support arguments.</td>
         </tr>
 
         <tr>
-            <td>Persuasiveness</td>
-            <td>Score</td>
+            <th>Persuasiveness</th>
+            <td>All arguments were logical and convincing</td>
+            <td>Most arguments were logical and convincing</td>
+            <td>Some arguments were logical and convincing</td>
+            <td>Few arguments were logical and convincing</td>
         </tr>
 
         <tr>
-            <td>Delivery</td>
-            <td>Score</td>
+            <th>Delivery</th>
+            <td>Communicated clearly and confidently; maintained eye contact; excellent delivery</td>
+            <td>Communicated clearly; frequent eye contact; good delivery</td>
+            <td>Seldom communicated clearly; poor eye contact; poor delivery</td>
+            <td>Failed to communicate clearly; no eye contact; monotone delivery</td>
         </tr>
 
         <tr>
-            <td>Rebuttal</td>
-            <td>Score</td>
+            <th>Rebuttal</th>
+            <td>Addressed all opponent arguments with counter-evidence</td>
+            <td>Addressed most of opponent’s arguments with counter-evidence</td>
+            <td>Addressed some of opponent’s arguments with counter-evidence</td>
+            <td>Did not address opponent’s arguments</td>
         </tr>
 		
 	</table>
