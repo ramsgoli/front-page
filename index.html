@@ -29,23 +29,14 @@
 		</style>
 		
 		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/bubbles.js"></script>
+        
 		
 		<script>
 		
 		$(document).ready(function() {
 			$("#head").css("visibility", "visible").animate({opacity: 1.0}, 2000);
 			$("#descript").css("visibility", "visible").delay(1000).animate({opacity: 1.0}, 2000);
-            var red = [0, 100, 63];
-            var orange = [40, 100, 60];
-            var green = [75, 100, 40];
-            var blue = [196, 77, 55];
-            var purple = [280, 50, 60];
 
-            var myName = "Ram";
-            var letterColors = [red, orange, green, blue, purple]
-            drawName(myName, letterColors)
-            bounceBubbles()
 		});
 		</script>
 		
@@ -55,7 +46,7 @@
 		
 		<p id = "head">Ram Goli</p>
 		<hr>
-		<p id = "descript">Aspiring engineer, inventor, activist</p>
+		<p id = "descript">Aspiring engineer, inventor, human</p>
 
 		
 	</body>
