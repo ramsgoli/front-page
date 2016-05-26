@@ -16,12 +16,20 @@
 			}
 			
 			#descript {
-				visibility: hidden;
-				opacity: 0.0;
+                visibility: hidden;
+                opacity: 0.0;
 				font-size: 20px;
 				text-align:center;
 				font-family: "Courier New";
 			}
+            #college {
+                visibility: hidden;
+                opacity: 0.0;
+                font-size: 20px;
+                text-align: center;
+                font-family: "Courier New";
+            }
+
 
             body {
                 background-color:lightblue;
@@ -35,7 +43,9 @@
 		
 		$(document).ready(function() {
 			$("#head").css("visibility", "visible").animate({opacity: 1.0}, 2000);
-			$("#descript").css("visibility", "visible").delay(1000).animate({opacity: 1.0}, 2000);
+            $("#college").css("visibility", "visible").delay(1000).animate({opacity: 1.0}, 2000);
+			$("#descript").css("visibility", "visible").delay(2000).animate({opacity: 1.0}, 2000);
+
 
 		});
 		</script>
@@ -46,6 +56,7 @@
 		
 		<p id = "head">Ram Goli</p>
 		<hr>
+        <p id = "college">UCLA class of 2020/Computer Science and Engineering</p>
 		<p id = "descript">Aspiring engineer, inventor, human</p>
 
 		
