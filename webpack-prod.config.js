@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = {
   entry: {
     main: [
-      './src/main.js',
+      './src/index.js',
     ],
   },
   // Render source-map file for final build
