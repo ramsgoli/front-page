@@ -8,7 +8,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     main: [
-      'main.js'
+      'index.js'
     ],
   },
   output: {
