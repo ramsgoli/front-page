@@ -5,4 +5,8 @@ import './main.scss';
 
 import App from './components/App';
 
+if (module.hot) {
+    module.hot.accept();
+}
+
 render(<App />, document.getElementById('mount'));

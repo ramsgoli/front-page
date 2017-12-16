@@ -1,6 +1,6 @@
 import React from 'react';
 
-import profilePic from '../../images/profile.JPG';
+import profilePic from '../../../images/profile.jpg';
 
 const Main = () => {
     return (

@@ -1,5 +1,7 @@
 @import "./styles/vars";
 
+@import "./components/main/style";
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -10,7 +12,7 @@ html, body {
     width: 100%;
     background: $canvas-color;
 
-    font-family: 'Lato', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 html, body, h1, h2, p {
