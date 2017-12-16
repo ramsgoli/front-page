@@ -49,7 +49,7 @@ const config = {
       },
       {
         test: /\.(jpg|png|gif|svg|pdf|ico)$/,
-        user: [{
+        use: [{
           loader: 'file-loader',
           options: {
             name: '[path][name]-[hash:8].[ext]'
