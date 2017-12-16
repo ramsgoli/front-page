@@ -47,6 +47,15 @@ const config = {
           cacheDirectory: true,
         },
       },
+      {
+        test: /\.(jpg|png|gif|svg|pdf|ico)$/,
+        user: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name]-[hash:8].[ext]'
+          }
+        }]
+      }
     ],
   },
 };
