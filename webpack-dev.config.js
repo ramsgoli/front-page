@@ -19,17 +19,27 @@ module.exports = {
     rules: [
       {
         test: /\.s?css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {loader: "css-loader"},
-            {loader: "sass-loader"},
-          ]
-        }),
+        use: [{
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader', 
+        }, {
+          loader: 'sass-loader'
+        }]
       },
       {
         test: /\.js$/,
         use: [{loader: "babel-loader"}],
       },
+      {
+        test: /\.(pdf|jpg|png|gif|svg|ico)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000
+          }
+        }]
+      }
     ],
   },
   devtool: 'eval-source-map',
@@ -44,6 +54,7 @@ module.exports = {
       }
     }),
     new ExtractTextPlugin('build/[name].css'),
+    new webpack.HotModuleReplacementPlugin()
   ],
   watchOptions: {
     poll: 2000,
@@ -51,6 +62,7 @@ module.exports = {
   },
   devServer: {
     contentBase: [path.join(__dirname, 'pages')],
+    hot: true,
     historyApiFallback: true,
     port: 8080,
   },

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-const ReactDOM = require('react-dom');
+
+import './main.scss';
 
 import App from './components/App';
 
