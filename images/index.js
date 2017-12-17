@@ -1,5 +1,2 @@
-import profile from './profile.jpg';
+export profile from './profile.jpg';
 
-export {
-    profile
-};

@@ -10,7 +10,8 @@ RUN apk add -U nginx make nodejs
 #   /static is the directory linked to nginx (serves static content)
 RUN mkdir -p /var/www/ramsgoli.com/working && \
     mkdir -p /var/www/ramsgoli.com/static && \
-    mkdir -p /var/www/ramsgoli.com/static/build
+    mkdir -p /var/www/ramsgoli.com/static/build && \
+    mkdir -p /var/www/ramsgoli.com/static/images
 
 # Install the required packages to build the frontend
 WORKDIR /var/www/ramsgoli.com/working
@@ -23,15 +24,14 @@ RUN /usr/bin/node --max_semi_space_size=8 \
 # Copy the source files
 COPY pages/ /var/www/ramsgoli.com/working/pages/
 COPY src/ /var/www/ramsgoli.com/working/src/
+COPY images/ /var/www/ramsgoli.com/working/images/
 COPY .babelrc *.js Makefile /var/www/ramsgoli.com/working/
 
 # build and copy files to server root
 RUN make build && \
     cp -rv pages/* ../static/ && \
-    cp -rv lib/build/* ../static/build/
-
-# copy images to source directory
-COPY images/ /var/www/ramsgoli.com/static/images/
+    cp -rv lib/build/* ../static/build/ && \
+    cp -rv lib/images/* ../static/images/
 
 # Copy the configuration file
 RUN mkdir -p /run/nginx
