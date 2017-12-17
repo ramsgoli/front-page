@@ -3,7 +3,7 @@
 FROM alpine:3.5
 
 # Download and install packages
-RUN apk add -U nginx make nodejs
+RUN apk add -U nginx make nodejs curl
 
 # Create directories
 #   /working is the build directory
