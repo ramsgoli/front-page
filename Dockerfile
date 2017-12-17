@@ -23,13 +23,15 @@ RUN /usr/bin/node --max_semi_space_size=8 \
 # Copy the source files
 COPY pages/ /var/www/ramsgoli.com/working/pages/
 COPY src/ /var/www/ramsgoli.com/working/src/
-COPY images/ /var/www/ramsgoli.com/working/images/
 COPY .babelrc *.js Makefile /var/www/ramsgoli.com/working/
 
 # build and copy files to server root
 RUN make build && \
     cp -rv pages/* ../static/ && \
     cp -rv lib/build/* ../static/build/
+
+# copy images to source directory
+COPY images/ /var/www/ramsgoli.com/static/images/
 
 # Copy the configuration file
 RUN mkdir -p /run/nginx
