@@ -1,6 +1,8 @@
 @import "./styles/vars";
 
+@import "./components/index";
 @import "./components/main/style";
+@import "./components/Links/style";
 
 *, *:before, *:after {
     box-sizing: border-box;

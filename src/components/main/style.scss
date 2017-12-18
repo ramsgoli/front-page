@@ -2,23 +2,36 @@
 
 .container-main {
   display: flex;
-  min-height: 100vh;
   flex-flow: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
+  flex: 3;
 
-  & > * {
-    margin: 20px;
+  & > div {
+    flex: 1;
+  }
+
+  h1 {
+    font-size: 2.7em;
+    text-align: right;
   }
 
   .divider {
-    border-left: 2px solid $black;
     height: 400px;
+    flex: 0.2;
+    background: linear-gradient(to right,
+      transparent 0%,
+      transparent calc(50% - 0.81px),
+      black calc(50% - 0.8px),
+      black calc(50% + 0.8px),
+      transparent calc(50% + 0.81px),
+      transparent 100%);
   }
 
   .profile-pic {
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
 
     img {
       max-width: 100%;
