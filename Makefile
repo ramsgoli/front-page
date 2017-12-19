@@ -10,7 +10,7 @@ build_image:
 	docker build -t ramsgoli.com/frontend .
 
 run: build_image
-	docker-compose up
+	docker-compose up -d
 
 gen: build
 	mkdir -p public

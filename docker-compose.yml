@@ -5,13 +5,4 @@ services:
     ports:
       - "80:80"
     restart: always
-    links:
-      - static-ci
 
-  static-ci:
-    image: ramsgoli.com/static-ci
-    ports:
-      - "3000:3000"
-    restart: always
-    env_file:
-      - .env
