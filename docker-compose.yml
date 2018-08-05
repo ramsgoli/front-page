@@ -9,6 +9,10 @@ services:
         - ./dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
         - /docker-volumes/etc/letsencrypt/live/ramsgoli.com/fullchain.pem:/etc/letsencrypt/live/ramsgoli.com/fullchain.pem
         - /docker-volumes/etc/letsencrypt/live/ramsgoli.com/privkey.pem:/etc/letsencrypt/live/ramsgoli.com/privkey.pem
+  uberapi:
+    image: ramsgoli/uberextbackend
+    ports:
+      - "7891:8000"
 
 
 
