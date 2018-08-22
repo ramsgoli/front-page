@@ -11,8 +11,8 @@ services:
         - /docker-volumes/etc/letsencrypt/live/ramsgoli.com/privkey.pem:/etc/letsencrypt/live/ramsgoli.com/privkey.pem
   uberapi:
     image: ramsgoli/uberextbackend
-    ports:
-      - "7891:8000"
+    environment:
+      - PORT=8000
 
 
 
