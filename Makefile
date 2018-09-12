@@ -7,7 +7,7 @@ dev:
 	WEBPACK=1 NODE_ENV=development npm run build-dev
 
 build_image:
-	docker build -t ramsgoli.com/frontend .
+	docker build -t ramsgoli/frontend .
 
 run: build_image
 	docker-compose up -d
